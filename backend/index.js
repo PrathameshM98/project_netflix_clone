@@ -21,6 +21,10 @@ const corsOptions = {
   credentials: true,
 };
 
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Hello connected" });
+});
+
 app.use(cors(corsOptions));
 // api
 app.use("/api/v1/user", userRoute);
